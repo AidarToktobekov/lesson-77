@@ -9,17 +9,6 @@ export const fetchMessage = createAsyncThunk<IMessage[]>(
         return messages;
     }
 )
-export const fetchNewMessages = createAsyncThunk<IMessage[], string>(
-    'message/fetchNewMessages',
-    async (date: string) =>{
-        const {data: messages} = await axiosApi.get<IMessage[]>(`/message?dateTime=${date}`);
-        if (date === undefined){
-            return [];
-        }
-        return messages;
-    }
-)
-
 
 export const addMessage = createAsyncThunk<void, MessageMutation>(
     'message/create',
