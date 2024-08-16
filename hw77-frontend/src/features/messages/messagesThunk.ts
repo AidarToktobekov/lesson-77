@@ -26,7 +26,11 @@ export const addMessage = createAsyncThunk<void, MessageMutation>(
     async (messageMutation: MessageMutation) =>{
         const formData = new FormData();
         formData.append('message', messageMutation.message);
-        formData.append('author', messageMutation.author);
+        if(messageMutation.author === ''){
+            formData.append('author', 'Anonymous');
+        }else{
+            formData.append('author', messageMutation.author);
+        }
         if (messageMutation.image){
             formData.append('image', messageMutation.image);
         }

@@ -37,7 +37,7 @@ const FormMessage =()=>{
         
         <Grid onSubmit={onSubmit} marginBottom="60px" container spacing={2} direction="column" component="form">
             <Grid item>
-                <TextField value={stateForm.author} onChange={onChange} required label="Author" name="author" multiline variant="standard"/>
+                <TextField value={stateForm.author} onChange={onChange} label="Author" name="author" multiline variant="standard"/>
             </Grid>
             <Grid item>
                 <TextField value={stateForm.message} onChange={onChange} required label="Message" name="message" multiline variant="standard"/>

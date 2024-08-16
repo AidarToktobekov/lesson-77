@@ -13,7 +13,6 @@ const Messages = ()=>{
     const lastMessage = useAppSelector(selectLastMessages);
     const loader = useAppSelector(selectMessagesFetching);
 
-
     useEffect(()=>{
         dispatch(fetchMessage());
     }, [dispatch])

@@ -36,7 +36,7 @@ const FileInput: React.FC<Props> = ({onChange, name, label}) => {
                 onChange={onFileChange}
                 ref={inputRef}
             />
-            <Grid container direction="row" spacing={2} alignItems="center">
+            <Grid marginTop={3} container direction="row" spacing={2} alignItems="center">
                 <Grid item xs>
                     <TextField
                         InputProps={{readOnly: true}}
