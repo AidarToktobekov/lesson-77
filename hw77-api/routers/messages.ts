@@ -16,13 +16,11 @@ messagesRouter.post('/', imagesUpload.single('image'), async (req, res) => {
         return res.status(400).send({"error": "Author and message must be present in the request"});
     }
 
-
     const message:MessageWithoutId = {
         message: req.body.message,
         author: req.body.author,
         image: req.file ? req.file.filename : null,
     }
-
 
     const savedMessage = await fileDb.addMessage(message)
 
