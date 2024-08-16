@@ -8,8 +8,7 @@ const messagesRouter = express.Router();
 
 messagesRouter.get('/', async (req, res) => {
     const messages = await fileDb.getMessages();
-    let result: IMessage[] = [];
-    return res.send(result);
+    return res.send(messages);
 });
 
 messagesRouter.post('/', imagesUpload.single('image'), async (req, res) => {
