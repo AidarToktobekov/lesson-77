@@ -8,11 +8,11 @@ import FileInput from "../UI/FileInput/FileInput.tsx";
 const FormMessage =()=>{
 
     const dispatch = useAppDispatch();
-    const [stateForm, setStateForm] = useState<MessageMutation>({author: '', message: '', image: null})
+    const [stateForm, setStateForm] = useState<MessageMutation>({author: '', message: '', image: null});
 
     const onSubmit = (e:FormEvent) => {
         e.preventDefault();
-        console.log(stateForm.image)
+        console.log(stateForm.image);
         setStateForm({author: '', message: '', image: null})
         dispatch(addMessage(stateForm));
         dispatch(fetchMessage());
@@ -24,13 +24,12 @@ const FormMessage =()=>{
 
     const fileInputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {name, files} = e.target;
-        console.log(files)
+        console.log(files);
         const value = files && files[0] ? files[0] : null;
         setStateForm((prev)=>({
             ...prev,
             [name]: value,
-        }))
-
+        }));
     }
 
     return(

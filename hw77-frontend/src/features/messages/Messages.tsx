@@ -15,7 +15,7 @@ const Messages = ()=>{
 
     useEffect(()=>{
         dispatch(fetchMessage());
-    }, [dispatch])
+    }, [dispatch]);
 
     return(
         <>
